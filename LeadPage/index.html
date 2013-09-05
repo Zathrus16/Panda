@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    
+    <script type="text/x-kite" id="lead-list">
+      {{#leads}}
+        <tr><td>{{agentId}}</td>
+            <td>{{firstName}}</td><td>{{lastName}}</td>
+            <td>{{phone}}</td><td>{{email}}</td>
+            <td>{{address}}</td><td>{{note}}</td></tr>
+      {{/leads}}    
+    </script>
+    
+  </head>
+
+  <body page="about">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CMS</a>
+        <p class="navbar-text">/the lead submission demo</p>
+        
+        <div class="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#test">Submit Lead</a></li>
+            <li><a href="#leadlist">Leads</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+        
+      </div>
+    </div>
+
+    <section id=about class="container">
+
+      <div class="starter-template">
+        <h1>About</h1>
+        <p class="lead">Use this application to test lead submission service.</p>
+        <ol><li>Click on {Test}</li>
+            <li>Fill data to submit</li>
+            <li>Click on {submit} button</li></ol>
+      </div>
+
+    </section>
+    
+    <section id=contact class="container">
+        <h1>Team2</h1>
+        <ul>
+          <li><a href="mailto:Evgenia.Fine@move.com">Fine, Evgenia</a></li>
+          <li><a href="mailto:Ray.Yi@move.com">Yi, Ray</a></li>
+          <li><a href="mailto:Rick.Zhang@move.com">Zhang, Rick</a></li>
+          <li><a href="mailto:Chu.Zhang@move.com">Zhang, Chu</a></li>
+          <li><a href="mailto:Christian.Le@move.com">Le, Christian</a></li>
+          <li><a href="mailto:Avinash.Narayan@move.com">Narayan, Avinash</a></li>
+          <li><a href="mailto:Andrew.Fedoniouk@move.com">Fedoniouk, Andrew</a></li>
+        </ul>
+    </section>
+    
+    <section id=test class="container">
+    
+      <form role="form">
+      
+        <div class="input-group">
+          <span class="input-group-addon">Case name</span>
+          <input type="text" class="form-control" placeholder="case name" name=caseName>
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Saved <span class="caret"></span></button>
+            <ul class="dropdown-menu pull-right">
+              <li><a >(none)</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+      
+        <div class="input-group">
+          <span class="input-group-addon">Service URL</span>
+          <input type="text" class="form-control" placeholder="url" name="url">
+        </div>
+        
+        <div class="input-group">
+          <span class="input-group-addon">agent ID</span>
+          <input type="text" class="form-control" placeholder="id or email" name="leadData.agentId">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">First name</span>
+          <input type="text" class="form-control" name="leadData.firstName">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Last name</span>
+          <input type="text" class="form-control" name="leadData.lastName">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Phone</span>
+          <input type="text" class="form-control" name="leadData.phone">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Email</span>
+          <input type="text" class="form-control" name="leadData.email">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Address</span>
+          <input type="text" class="form-control" name="leadData.address">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Note</span>
+          <textarea class="form-control" name="leadData.note" rows=6></textarea>
+        </div>
+        <!--<div class="input-group">
+          <span class="input-group-addon">Lead data (JSON)</span>
+          <textarea class="form-control" name="leadData" rows=10></textarea>
+        </div>-->
+        <button type="button" class="btn btn-primary" name="go" >Submit!</button>
+        <button type="button" class="btn btn-default" name="test" >Show JSON</button>
+
+      </form>    
+
+    </section>
+    
+    <section id=leadlist class="container">
+        <h1>Lead list</h1>
+        <form role="form">
+          <div class="input-group">
+            <span class="input-group-addon">Service URL</span>
+            <input type="text" class="form-control" name="url">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" name="go">Go!</button>
+            </span>
+          </div><!-- /input-group -->        
+        <form>
+        <table class="table output">
+          <thead>
+            <tr><th>Agent Id</th>
+                <th>First name</th>  
+                <th>Last name</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>address</th>
+                <th>note</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </section>    
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-hashchange.js"></script>
+    <script src="js/jquery-formvalue.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/kite.js"></script>
+    <script src="code.js"></script>
+    <script src="pages/test.js"></script>
+    <script src="pages/list.js"></script>
+    
+    
+  </body>
+</html>

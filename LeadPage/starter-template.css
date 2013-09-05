@@ -1,0 +1,22 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.starter-template > ol > li { display:inline-block;  }
+.starter-template > ol > li:not(:last-child)::after { content:">"; margin:0 6px; }
+
+#test > form { margin:16px auto; width:75%; min-width:400px; }
+#test > form > .input-group { margin:16px 0; }
+#test > form .input-group-addon:first-child { min-width: 10em; }
+#test > form textarea { font-family:monospace; }
+
+
+div.navbar p.navbar-text { margin-left:4px; margin-right:10px; }
+
+body:not([page=about])    > section#about { display:none; }
+body:not([page=test])     > section#test { display:none; }
+body:not([page=contact])  > section#contact { display:none; }
+body:not([page=leadlist]) > section#leadlist { display:none; }
